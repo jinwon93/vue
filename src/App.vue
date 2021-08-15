@@ -1,7 +1,7 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   vue 연습1.
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <HelloWorld msg="Vue.js"/>
 </template>
 
 <script>
