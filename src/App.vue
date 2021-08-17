@@ -17,7 +17,7 @@
   <h2 :class="{ red:food==='apple','not-good':food ==='rice'}">원숭이는 {{food}}</h2>
   <!-- v-if -->
   <h2 v-if="age">{{age}}</h2>
-  
+  <!-- 라우터확인 -->
 </template>
 
 <script>
