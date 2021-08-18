@@ -18,6 +18,8 @@
   <!-- v-if -->
   <h2 v-if="age">{{age}}</h2>
   <!-- 라우터확인 -->
+  <!-- vue3 재공부 시작 -->
+  
 </template>
 
 <script>
