@@ -1,43 +1,21 @@
-
-<template> 
-  <h1>Vue {{animal}} !!</h1>
-  <h2>{{ food }}</h2>
-  <input type="text" v-model="food" />
-  <div v-html="alertMessage"></div>
-  <!-- 주의 v-html을 사용할때는 반드시 확실한 출처에만 사용  subHtml 사용예시  -->
-  <!-- <div v-html="subHtml"></div> -->
-  <a v-bind:href="UrlSource">dd</a>
-  <hr />
-  <a :href="UrlSource">업데이트 이후 콜론으로 bind 생략가능 </a>
-  <hr />
-  <a :href="food">{{food}}</a>
-  <hr />
-  <!-- 동적으로 class 주는방법  -->
-  <!-- Object 형식예제 {클래스 : 참/거짓} -->
-  <h2 :class="{ red:food==='apple','not-good':food ==='rice'}">원숭이는 {{food}}</h2>
-  <!-- v-if -->
-  <h2 v-if="age">{{age}}</h2>
-  <!-- 라우터확인 -->
-  <!-- vue3 재공부 시작 -->
-  
+<template>
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+  </div>
+  <router-view/>
+  <Footer />
 </template>
 
 <script>
 
+import Footer from './components/common/Footer.vue'; 
 
 export default {
-  name: 'App',
-  data:() => {
-    return {
-      animal:"Monkey",
-      food:"banana",
-      alertMessage:"<h1>경고입니다!!<h1>",
-      // subHtml:`<button onclick="document.querySelector('body').style.display='none'">구독하기</button>`, 
-      UrlSource:`https://www.naver.com`,
-      age:10    
-    };
-  },
-  
+  name:'nav',
+  components:{
+    Footer
+  }
 }
 </script>
 
@@ -48,18 +26,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
-.orange {
-  color: orange;
+
+#nav {
+  padding: 30px;
 }
-.cyan{
-  color: cyan;
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
 }
-.red{
-  color: red;
-}
-.not-good{
-  text-decoration: line-through ;
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
