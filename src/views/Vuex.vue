@@ -1,7 +1,7 @@
 <template>
-    <div>gkgkgkgkgk</div>
+    <!-- <div>gkgkgkgkgk</div> -->
     <div class="vuex">
-            <h1>Sample ddd화면입니다</h1>
+            <h1>vuex ddd화면입니다</h1>
     </div>
 </template>
 
@@ -10,7 +10,7 @@
 import http from '../http'
 
 export default {
-    name:"Vuex",
+    name:"vuex",
     components : {},
     methods :{},
     created() {
