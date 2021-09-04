@@ -1,32 +1,35 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../pages/index.vue';
-//import Todos from '../pages/todos/index.vue';
-//import Todo from '../pages/todos/_id.vue';
-
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
-  {
-    path:'/vuex',
-    name : 'vuex',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Vuex.vue')
-  },
-]
+import Todos from '../pages/todos/index.vue';
+import Todo from '../pages/todos/_id.vue';
+import TodoCreate from '../pages/todos/create/index.vue';
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+    history: createWebHistory(),
+    routes: [
+        {
+            path: '/',
+            name: 'Home',
+            component: Home
+        },
+        {
+            path: '/todos',
+            name: 'Todos',
+            component: Todos
+        },
+        {
+            path: '/todos/create',
+            name: 'TodoCreate',
+            component: TodoCreate
+        },
+        {
+            path: '/todos/:id',
+            name: 'Todo',
+            component: Todo
+        }
+    ]
+});
 
-export default router
+// 1 / home 2 /todos 3 /todos/create 4 /todos/:id
+
+export default router;
