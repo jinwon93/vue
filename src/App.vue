@@ -1,4 +1,3 @@
-  
 <template>
   <Navbar />
   <div class="container">
